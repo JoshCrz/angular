@@ -1,0 +1,61 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-12">
+            <h3>Checkout</h3>            
+            <div class="alert alert-danger" *ngIf="loading">
+                <i class="fas fa-spin fa-cog"></i>
+            </div>
+            <table class="table mt-5" *ngIf="!loading">
+                <tbody>
+                    <tr>
+                        <th>
+                            
+                        </th>
+                        <th>
+                            Item
+                        </th>
+                        <th class="text-right">
+                            Size
+                        </th>
+                        <th class="text-right">
+                            Price
+                        </th>
+                        <th class="text-right">
+                            Qty
+                        </th>
+                        
+                    </tr>
+                    <tr *ngFor="let item of basket.items">
+                        <td></td>
+                        <td>{{item.name}}</td>
+                        <td class="text-right"></td>
+                        <td class="text-right">{{item.price}}</td>
+                        <td class="text-right">{{item.qty}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-12 my-5 text-center">
+            <h3>Have we got your details right?</h3>
+        </div>
+        <div class="offset-1 col-4 p-3 shadow-lg rounded">
+            <h4>Billing To:</h4>
+            <p>P Sherman<br />
+            42<br />
+            Wallaby Way<br />
+            Sydney</p>
+            <p><i class="fas fa-phone"></i> 01952 123654</p>
+            <p><i class="fas fa-envelope"></i> info@officesupplies.com</p>
+        </div>
+        <div class="offset-2 col-4 p-3 shadow-lg rounded">
+            <h4>Delivering To:</h4>
+            P Sherman<br />
+            42<br />
+            Wallaby Way<br />
+            Sydney
+        </div>
+    </div>
+
+</div>

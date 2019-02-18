@@ -1,0 +1,36 @@
+<div class="offset-xl-10 offset-lg-8 col-xl-2 col-lg-4 fixed-top p-0">
+    <div class="openCart">
+        <h4>Your Basket</h4>
+        <table class="table table-sm" *ngIf="cart && cart.items.length">
+            <tbody>
+                <tr>
+                    <th>Item</th>
+                    <th class="text-right">Price</th>
+                    <th class="text-right">Qty</th>
+                    <th></th>
+                </tr>
+                <tr *ngFor="let item of cart.items">
+                    <td>{{item.name}}</td>
+                    <td align="right">{{item.price}}</td>
+                    <td align="right">{{item.qty}}</td>
+                    <td align="right"><i class="fas fa-times text-danger cursor-hov" (click)="removeItem(item)"></i></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="alert alert-info" *ngIf="cart && !cart.items.length">
+            Your cart is empty
+        </div>
+
+        <hr />
+
+        <div class="text-right">
+            <button class="btn btn-sm btn-outline-dark" (click)="closeCart()">
+                Close
+            </button>
+            <button class="btn btn-sm btn-success" [routerLink]="['/checkout']">
+                Checkout
+            </button>
+        </div>
+    </div>
+</div>

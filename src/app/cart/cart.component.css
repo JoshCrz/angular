@@ -1,0 +1,13 @@
+.openCart {
+    padding: 25px;
+    background-color: #fff;
+    opacity: .9;
+}
+
+.openCart table{
+    overflow: scroll;
+}
+
+.cursor-hov:hover {
+    cursor: pointer;
+}
