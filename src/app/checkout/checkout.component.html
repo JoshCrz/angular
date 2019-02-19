@@ -29,10 +29,10 @@
                     <tr *ngFor="let item of basket.items">
                         <td></td>
                         <td>{{item.name}}</td>
-                        <td class="text-right"></td>
-                        <td class="text-right">{{item.price}}</td>
-                        <td class="text-right">{{item.qty}}</td>
-                        <td><button class="btn btn-sm btn-danger" (click)="removeItem(item)">Remove</button></td>
+                        <td align="right"></td>
+                        <td align="right">{{item.price}}</td>
+                        <td align="right">{{item.qty}}</td>
+                        <td align="right"><i class="fas fa-times text-danger cursor-hov" (click)="removeItem(item)"></i></td>
                     </tr>
                 </tbody>
             </table>
