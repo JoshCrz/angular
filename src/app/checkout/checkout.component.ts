@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 import { Cart } from '../classes/cart';
-import { startWith, tap, delay } from 'rxjs/operators';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Component({
   selector: 'app-checkout',
@@ -11,18 +11,22 @@ import { startWith, tap, delay } from 'rxjs/operators';
 export class CheckoutComponent implements OnInit {
 
   basket: any;
-  loading: any;
+  isLoading$: BehaviorSubject<boolean> = new BehaviorSubject(false);
   constructor(private cart: Cart, private cartService: CartService) {
    
   }
 
   ngOnInit() {    
-    this.loading = true;
-    this.basket = this.cartService.loadCart()
-    if (this.basket) {
-      this.loading = false;
-    }
-    
+      this.isLoading$.next(true);
+      this.cart.get()
+        .subscribe(r => {
+            this.basket = r;
+            this.isLoading$.next(false);
+        })              
   }
-  
+
+  removeItem(item) {
+      this.cartService.removeItem(item)
+  }
+
 }

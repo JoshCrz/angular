@@ -37,15 +37,9 @@ export class HeaderComponent implements OnInit {
   constructor(private cartService: CartService, private cartClass: Cart) { }
 
   ngOnInit() {
-    this.cartClass.get()
-      .subscribe(r => {
-        console.log('cart class!')
-        console.log(r)
-      })
   }
 
   openCart() {
-    this.cart = this.cartService.loadCart();
     this.showCart = true;
   }
 

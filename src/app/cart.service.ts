@@ -44,17 +44,21 @@ export class CartService {
 
     updateCart(cart) {
       let jsonCart = JSON.stringify(cart);      
-      window.localStorage.setItem('cart', jsonCart)
+      window.localStorage.setItem('cart', jsonCart)      
       this.cart.update(cart);
     }
 
     removeItem(itemToDelete) {
-      let cart = this.loadCart();      
+     let cartObj;
+     this.cart.get()
+        .subscribe(r => {
+            cartObj = r;
+        })
       //create new cart, parse items from previous and push to new if id's dont match
       let newCart = {
         items: []
       }
-      cart.items.forEach((item) => {
+      cartObj.items.forEach((item) => {
         if (item.name != itemToDelete.name) {
           //this would compare id's rather than names
           newCart.items.push(item);
@@ -65,12 +69,12 @@ export class CartService {
 
     deleteCart() {
 
-    }
+    }   
 
     loadCart = () => {
-    let jsonCart = window.localStorage.getItem('cart');
-    let cart = JSON.parse(jsonCart);    
-    return cart;
-  }
+        let jsonCart = window.localStorage.getItem('cart');
+        let cart = JSON.parse(jsonCart);
+        return cart;
+    }
 
 }

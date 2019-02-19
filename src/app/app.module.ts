@@ -14,6 +14,7 @@ import { RoutesService } from './routes.service';
 import { AnimationsComponent } from './animations/animations.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { TestCartComponent } from './test-cart/test-cart.component';
 
 
 const appRoutes: Routes = [
@@ -34,7 +35,8 @@ const appRoutes: Routes = [
     HomepageComponent,    
     AnimationsComponent,
     CartComponent,
-    CheckoutComponent    
+    CheckoutComponent,
+    TestCartComponent    
   ],
   imports: [
     RouterModule.forRoot(

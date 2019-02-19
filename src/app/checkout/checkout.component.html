@@ -2,10 +2,10 @@
     <div class="row">
         <div class="col-12">
             <h3>Checkout</h3>            
-            <div class="alert alert-danger" *ngIf="loading">
+            <div class="alert alert-danger" *ngIf="isLoading$ | async">
                 <i class="fas fa-spin fa-cog"></i>
             </div>
-            <table class="table mt-5" *ngIf="!loading">
+            <table class="table mt-5" *ngIf="!(isLoading$ | async)">
                 <tbody>
                     <tr>
                         <th>
@@ -23,6 +23,7 @@
                         <th class="text-right">
                             Qty
                         </th>
+                        <th></th>
                         
                     </tr>
                     <tr *ngFor="let item of basket.items">
@@ -31,9 +32,13 @@
                         <td class="text-right"></td>
                         <td class="text-right">{{item.price}}</td>
                         <td class="text-right">{{item.qty}}</td>
+                        <td><button class="btn btn-sm btn-danger" (click)="removeItem(item)">Remove</button></td>
                     </tr>
                 </tbody>
             </table>
+            <div class="alert alert-info" *ngIf="!basket.items">
+                No items in cart
+            </div>
         </div>
     </div>
     <div class="row mt-5">

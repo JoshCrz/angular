@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CartService } from '../cart.service';
 import { Cart } from '../classes/cart';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'cart',
@@ -13,9 +15,9 @@ export class CartComponent implements OnInit {
   showCart: any;
   @Output() closed = new EventEmitter<any>();
 
-  constructor(private cartService: CartService, private cartClass: Cart) {
+  constructor(private cartService: CartService, private cartClass: Cart, private router: Router) {
     this.cartClass.get()
-      .subscribe(r => {
+        .subscribe(r => {
         this.cart = r;
       })
   }
@@ -30,6 +32,11 @@ export class CartComponent implements OnInit {
 
   removeItem(item) {
     this.cartService.removeItem(item)
+  }
+
+  navigateToCheckout() {
+      this.closeCart();
+      this.router.navigate(['checkout']);
   }
 
 }
