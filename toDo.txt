@@ -1,0 +1,20 @@
+To do list
+
+Front End:
+Footer
+Product page
+Profile - log in page, register account
+Menu - products/contact
+
+Checkout - adjust quantities
+Delivery options
+Payment screen
+
+Admin section - show reporting info
+Route Guarding
+
+
+Back End:
+Create a basic API
+Create a basic database
+Push data from API to database
