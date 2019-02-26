@@ -16,6 +16,7 @@ import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { TestCartComponent } from './test-cart/test-cart.component';
 import { FooterComponent } from './footer/footer.component';
+import { MenuComponent } from './menu/menu.component';
 
 
 const appRoutes: Routes = [
@@ -38,7 +39,8 @@ const appRoutes: Routes = [
     CartComponent,
     CheckoutComponent,
     TestCartComponent,
-    FooterComponent    
+    FooterComponent,
+    MenuComponent    
   ],
   imports: [
     RouterModule.forRoot(

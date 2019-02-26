@@ -8,3 +8,7 @@ h2 {
 .cursor-hov:hover {
     cursor: pointer;
 }
+
+.bg-main {
+    background-color: #713E5A;
+}

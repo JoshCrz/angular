@@ -1,4 +1,4 @@
-<div class="container-fluid bg-dark text-white p-0">    
+<div class="container-fluid bg-main text-white p-0">    
     <div class="row no-gutters">
         <div class="col-12">
             <div class="d-flex flex-row">
@@ -10,8 +10,9 @@
                         <div class="bg-secondary p-3 float-left" (click)="openCart()">
                             <i class="fas fa-shopping-basket text-white m-0 h2"></i>
                         </div>
-                        <div class="bg-danger p-3 float-left">
-                            <i class="fas fa-user-circle text-white m-0 h2"></i>
+                        <div class="bg-warning p-3 float-left">
+                            <i class="fas fa-bars text-white m-0 h2"></i>
+                            <!--<i class="fas fa-user-circle text-white m-0 h2"></i>-->
                         </div>
                     </div>
                 </div>
@@ -22,3 +23,4 @@
 </div>
 
 <cart *ngIf="showCart" (closed)="showCart = false"></cart>
+<app-menu></app-menu>
