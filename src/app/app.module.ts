@@ -5,7 +5,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 
 import { Cart } from './classes/cart';
-import { Product } from './classes/product';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
