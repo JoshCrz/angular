@@ -1,0 +1,26 @@
+<div class="container-fluid section shadow">
+    <div class="row m-0">
+        <div class="col-12 text-center">
+            <h3>Products</h3>
+        </div>
+    </div>
+    
+    <div class="row m-0">      
+        <div class="col-auto" *ngFor="let product of products">            
+            <div class="text-center">
+                <img src="https://via.placeholder.com/250" class="img-responsive rounded shadow" />
+            </div>
+            <div class="row no-gutters mt-2">
+                <div class="col-4 rounded">
+                    <p><b>{{product.name}}</b></p>
+                </div>
+                <div class="col-4">
+                    <p><b>&pound;{{product.price}}</b></p>
+                </div>
+                <div class="col-4 px-0">
+                    <button class="btn btn-sm btn-primary float-right" (click)="addToCart(product)">Add to cart</button>
+                </div>
+            </div>            
+        </div>        
+    </div>        
+</div>

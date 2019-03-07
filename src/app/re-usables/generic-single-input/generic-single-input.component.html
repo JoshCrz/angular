@@ -1,0 +1,6 @@
+<div class="input-group input-group-sm mb-3">
+    <input [type]="typeOfInput" class="form-control form-control-sm" [placeholder]="context" [(ngModel)]="preSetValue">
+    <div class="input-group-append">
+        <button (click)="updateValue(preSetValue)" class="btn btn-outline-secondary bg-main text-white" type="button" id="button-addon2">Search <i class="fas fa-search"></i></button>
+    </div>
+</div> 

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { Cart } from './classes/cart';
 import { Product } from './classes/product';
@@ -18,16 +19,32 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { TestCartComponent } from './test-cart/test-cart.component';
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './header/menu/menu.component';
-
+import { ProductsComponent } from './products/products.component';
+import { ProductComponent } from './product/product.component';
+import { GenericSingleInputComponent } from './re-usables/generic-single-input/generic-single-input.component';
+import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
 
 const appRoutes: Routes = [
   {
     path: '',
-    component: HomepageComponent
+    component: HomepageComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: '404',
+    component: NotFoundComponentComponent    
   },
   {
     path: 'checkout',
     component: CheckoutComponent
+  },
+  {
+    path: 'product',
+    component: ProductComponent
+  },
+  {
+      path: '**',
+      redirectTo: '/404'
   }
 ]
 
@@ -41,7 +58,11 @@ const appRoutes: Routes = [
     CheckoutComponent,
     TestCartComponent,
     FooterComponent,
-    MenuComponent    
+    MenuComponent,
+    ProductsComponent,
+    ProductComponent,
+    GenericSingleInputComponent,
+    NotFoundComponentComponent    
   ],
   imports: [
     RouterModule.forRoot(
@@ -50,7 +71,9 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   //pass service as provider for a single instance accross the app
   providers: [CartService, Cart],

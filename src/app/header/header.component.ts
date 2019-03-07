@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { CartService } from '../cart.service';
 import { Cart } from '../classes/cart';
 
 @Component({
@@ -35,11 +34,11 @@ export class HeaderComponent implements OnInit {
     showMenu: boolean = false;
     cart: any;
 
-  constructor(private cartService: CartService, private cartClass: Cart) { }
+    constructor(private cartClass: Cart) { }
 
   ngOnInit() {
   }
-
+    
   openCart() {
     this.showCart = true;
   }
