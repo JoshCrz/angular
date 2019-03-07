@@ -43,8 +43,8 @@ const appRoutes: Routes = [
     component: ProductComponent
   },
   {
-      path: '**',
-      redirectTo: '/404'
+    path: '**',
+    redirectTo: '/404'
   }
 ]
 

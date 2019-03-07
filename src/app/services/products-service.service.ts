@@ -10,7 +10,7 @@ export class ProductsService {
     //products: Observable<Array<Product>>;
 
     getProducts(): Observable<Product[]> {
-        return Observable.of(this.products)
+        return Observable.of(this.products).delay(3000);
     }
     products = [
         {

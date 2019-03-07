@@ -1,11 +1,16 @@
 <div class="container-fluid section shadow">
     <div class="row m-0">
-        <div class="col-12 text-center">
-            <h3>Products</h3>
+        <div class="col-12 text-center display-4">
+            <ng-container *ngIf="productsLoading; else default">
+                <i class="fas fa-cog fa-spin text-primary"></i> Loading products...
+            </ng-container>
+            <ng-template #default>
+                Products
+            </ng-template>            
         </div>
     </div>
-    
-    <div class="row m-0">      
+   
+    <div class="row mt-4" *ngIf="!productsLoading">      
         <div class="col-auto" *ngFor="let product of products">            
             <div class="text-center">
                 <img src="https://via.placeholder.com/250" class="img-responsive rounded shadow" />

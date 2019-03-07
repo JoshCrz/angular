@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../../services/products-service.service';
@@ -14,6 +14,7 @@ export class MenuComponent implements OnInit {
 
   @Input() display: boolean;
   productSearchInput: number;
+  @Output() closeMenu: EventEmitter<any> =  new EventEmitter<any>();  
 
   constructor(private productsService: ProductsService, private router: Router) { }
 
@@ -22,10 +23,12 @@ export class MenuComponent implements OnInit {
 
   search(id) {            
       let x = parseFloat(id);
-      let y = this.productsService.getProductDetails(x)            
+      let y = this.productsService.getProductDetails(x)      
       if (y) {          
-          this.router.navigate(['/product', {id: y.id}])
+          this.router.navigate(['/product', { id: y.id }])
+          this.closeMenu.emit()
       }
+      
   }
 
   updateInput(val) {

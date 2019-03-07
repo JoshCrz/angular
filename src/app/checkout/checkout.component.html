@@ -2,7 +2,7 @@
 <div class="container mt-3">
     <div class="row">
         <div class="col-12">
-            <h3>Checkout</h3>            
+            <h3 class="display-4 text-lowercase">Checkout</h3>            
             <div class="alert alert-danger" *ngIf="isLoading$ | async">
                 <i class="fas fa-spin fa-cog"></i>
             </div>
@@ -37,6 +37,9 @@
                     </tr>
                 </tbody>
             </table>
+            <div class="text-right mt-5">
+                <button class="btn btn-success">Proceed</button>
+            </div>
             <div class="alert alert-info mt-4" *ngIf="!basket.items.length">
                 No items in cart
             </div>
@@ -44,7 +47,8 @@
     </div>
     <div class="row my-5">
         <div class="col-12 my-5 text-center">
-            <h3>Have we got your details right?</h3>
+            <hr />
+            <h3 class="display-4 text-lowercase">Have we got your details right?</h3>               
         </div>
         <div class="offset-1 col-4 p-3 shadow-lg rounded">
             <h4>Billing To:</h4>

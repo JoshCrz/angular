@@ -30,4 +30,4 @@
 
 <cart *ngIf="showCart" (closed)="showCart = false"></cart>
 
-<app-menu *ngIf="showMenu"></app-menu>
+<app-menu *ngIf="showMenu" (closeMenu)="toggleMenu()"></app-menu>

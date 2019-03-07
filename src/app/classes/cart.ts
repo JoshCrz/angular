@@ -9,8 +9,6 @@ export class Cart {
   private details: BehaviorSubject<any> = new BehaviorSubject<any>(null)
 
   update = (d) => {
-    console.log('cart updated from class!')
-    console.log(d)
     this.details.next(d);
   }
 
