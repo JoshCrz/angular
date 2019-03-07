@@ -13,11 +13,11 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { CartService } from './cart.service';
 import { RoutesService } from './routes.service';
 import { AnimationsComponent } from './animations/animations.component';
-import { CartComponent } from './cart/cart.component';
+import { CartComponent } from './header/cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { TestCartComponent } from './test-cart/test-cart.component';
 import { FooterComponent } from './footer/footer.component';
-import { MenuComponent } from './menu/menu.component';
+import { MenuComponent } from './header/menu/menu.component';
 
 
 const appRoutes: Routes = [

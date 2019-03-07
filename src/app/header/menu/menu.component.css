@@ -2,13 +2,15 @@
     background-color: #713E5A;
 }
 
+.open-menu {
+    padding: 25px;
+    background-color: #faf7f8;
+    opacity: .6
+}
+
 .menu-items-parent div {
     text-align: center;
     flex-grow: 1;
     padding: 10px;
     font-size: 16px;
-}
-
-.header-underline {
-    border-bottom: solid 3px white;
 }

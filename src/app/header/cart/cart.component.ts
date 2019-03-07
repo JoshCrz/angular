@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { CartService } from '../cart.service';
-import { Cart } from '../classes/cart';
+import { CartService } from '../../cart.service';
+import { Cart } from '../../classes/cart';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Router } from '@angular/router';
 

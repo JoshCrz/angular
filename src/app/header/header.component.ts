@@ -31,8 +31,9 @@ import { Cart } from '../classes/cart';
 })
 export class HeaderComponent implements OnInit {
 
-  showCart: any;  
-  cart: any;
+    showCart: boolean;  
+    showMenu: boolean = false;
+    cart: any;
 
   constructor(private cartService: CartService, private cartClass: Cart) { }
 
@@ -41,6 +42,14 @@ export class HeaderComponent implements OnInit {
 
   openCart() {
     this.showCart = true;
+  }
+
+  toggleMenu() {
+      if (this.showMenu) {
+          this.showMenu = false;
+      } else {
+          this.showMenu = true;
+      }
   }
 
 }

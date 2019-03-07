@@ -2,25 +2,32 @@
     <div class="row no-gutters">
         <div class="col-12">
             <div class="d-flex flex-row">
-                <div class="offset-4 col-4 text-center pt-2">
-                    <h2 class="mt-1 cursor-hov" [routerLink]="['/']"><!--Pure Power--> Compny Logo</h2>                    
+                <div class="offset-lg-4 col-lg-4 offset-md-3 col-md-6 text-center py-2 mr-auto">
+                    <h2 class="cursor-hov" [routerLink]="['/']"><!--Pure Power--> Company Logo</h2>                    
                 </div>
-                <div class="col-4 p-0">
-                    <div class="float-right">
-                        <div class="bg-secondary p-3 float-left" (click)="openCart()">
-                            <i class="fas fa-shopping-basket text-white m-0 h2"></i>
+                <div class="col-auto">        
+                    <div class="row h-100 align-items-center">
+                        <div class="col-6 bg-secondary text-center h-100" (click)="openCart()">
+                            <div class="row h-100">
+                                <div class="col-12 align-self-center">
+                                    <i class="fas fa-shopping-basket text-white m-0 h3"></i>
+                                </div>                                
+                            </div>                            
                         </div>
-                        <div class="bg-warning p-3 float-left">
-                            <i class="fas fa-bars text-white m-0 h2"></i>
-                            <!--<i class="fas fa-user-circle text-white m-0 h2"></i>-->
+                        <div class="col-6 bg-warning text-center h-100" (click)="toggleMenu()">
+                            <div class="row h-100">
+                                <div class="col-12 align-self-center">
+                                    <i [ngClass]="showMenu ? 'fa-times' : 'fa-bars'" class="fas text-white m-0 h3"></i>        
+                                </div>
+                            </div>                            
                         </div>
-                    </div>
+                    </div>                                                   
                 </div>
             </div>
-        </div>            
-        
+        </div>                    
     </div>
 </div>
 
 <cart *ngIf="showCart" (closed)="showCart = false"></cart>
-<app-menu></app-menu>
+
+<app-menu *ngIf="showMenu"></app-menu>
