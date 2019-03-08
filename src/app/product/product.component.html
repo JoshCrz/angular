@@ -1,4 +1,20 @@
-<p>
-  product works!
-</p>
-{{product | json}}
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-12">
+            <h1 class="display-3">{{product.name}}
+                <span class="float-right">{{product.price | currency: 'GBP'}}</span>
+            </h1>
+        </div>
+    </div>
+    <div class="row my-5">
+        <div class="col-6">
+            <div>
+                <img src="https://via.placeholder.com/500" class="img-responsive rounded shadow" />
+            </div>
+        </div>
+        <div class="col-6 border">
+            <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin vestibulum mi ut gravida molestie. Proin a aliquam felis. Sed tincidunt in risus sit amet mollis. Mauris nec ante magna. Proin non commodo justo. Vestibulum condimentum massa purus. Nulla ultricies efficitur erat non laoreet.</p>
+            <p>Morbi ut enim non lacus dapibus fringilla quis quis metus. Morbi urna tortor, convallis ac augue vel, sagittis ullamcorper lectus. Nam rhoncus lacus ut purus cursus bibendum. Nam dapibus sem neque, nec placerat tortor ullamcorper egestas.</p>
+        </div>
+    </div>
+</div>

@@ -13,7 +13,7 @@
     <div class="row mt-4" *ngIf="!productsLoading">      
         <div class="col-auto" *ngFor="let product of products">            
             <div class="text-center">
-                <img src="https://via.placeholder.com/250" class="img-responsive rounded shadow" />
+                <img src="https://via.placeholder.com/250" class="img-responsive rounded shadow cursor-hov" [routerLink]="['/product', {id: product.id}]" />
             </div>
             <div class="row no-gutters mt-2">
                 <div class="col-4 rounded">

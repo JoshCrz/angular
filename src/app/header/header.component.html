@@ -7,14 +7,14 @@
                 </div>
                 <div class="col-auto">        
                     <div class="row h-100 align-items-center">
-                        <div class="col-6 bg-secondary text-center h-100" (click)="openCart()">
+                        <div class="col-6 bg-secondary text-center h-100 cursor-hov" (click)="openCart()">
                             <div class="row h-100">
                                 <div class="col-12 align-self-center">
                                     <i class="fas fa-shopping-basket text-white m-0 h3"></i>                                    
                                 </div>                                
                             </div>                            
                         </div>
-                        <div class="col-6 bg-warning text-center h-100" (click)="toggleMenu()">
+                        <div class="col-6 bg-dark text-center h-100 cursor-hov" (click)="toggleMenu()">
                             <div class="row h-100">
                                 <div class="col-12 align-self-center">
                                     <i [ngClass]="showMenu ? 'fa-times' : 'fa-bars'" class="fas text-white m-0 h3"></i>        

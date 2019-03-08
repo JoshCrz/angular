@@ -14,3 +14,11 @@
     padding: 10px;
     font-size: 16px;
 }
+
+.menu-items-parent div, a {
+    color: unset;
+}
+
+.cursor-hov:hover {
+    cursor:pointer;    
+}

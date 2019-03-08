@@ -23,6 +23,7 @@ import { ProductsComponent } from './products/products.component';
 import { ProductComponent } from './product/product.component';
 import { GenericSingleInputComponent } from './re-usables/generic-single-input/generic-single-input.component';
 import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
+import { CompanyInfoComponent } from './company-info/company-info.component';
 
 const appRoutes: Routes = [
   {
@@ -41,6 +42,14 @@ const appRoutes: Routes = [
   {
     path: 'product',
     component: ProductComponent
+  },
+  {
+    path: 'company',
+    component: CompanyInfoComponent
+  },
+  {
+    path: 'animations',
+    component: AnimationsComponent
   },
   {
     path: '**',
@@ -62,7 +71,8 @@ const appRoutes: Routes = [
     ProductsComponent,
     ProductComponent,
     GenericSingleInputComponent,
-    NotFoundComponentComponent    
+    NotFoundComponentComponent,
+    CompanyInfoComponent    
   ],
   imports: [
     RouterModule.forRoot(

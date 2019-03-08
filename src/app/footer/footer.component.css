@@ -9,6 +9,10 @@
     font-size: 16px;
 }
 
+.menu-items-parent div, a {
+    color: unset;
+}
+
 .header-underline {
     border-bottom: solid 3px white;
 }
